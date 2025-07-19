@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --primary-color: #0E4152;
+    --secondary-color: #ffffff;
+    --background-color: #050E15;
+    --text--gradient: linear-gradient(to right, #ffffff, #041e33);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+
+header {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.title {
+    font-family: 'Crimson Text', serif;
+    font-size: 24px;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.letsTalk {
+    font-size: 20px;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    padding-top: 2px;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Crimson Text', serif;
+    background-color: var(--secondary-color);
+    color: #000;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.letsTalk::before{
+    background-color:var(--primary-color);
+    height: 100%;
+    width: 0;
+    content: "" ;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.letsTalk:hover::before{
+    width: 100%;
+}
+
+.letsTalk:hover {
+    color: var(--text-color);
+}
+
+.menu img {
+    margin-top: 4px;
+    width: 22px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+#menuDiv {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .letsTalk {
+        width: 80px;
+        height: 25px;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .menu img {
+        width: 18px;
+        margin-top: 6px;
+    }
+}
+
+#hero {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto 200px auto;
+}
+
+.heroImage img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: absolute;
+}
+
+.heading {
+    padding: 2%;
+    width: 80%;
+    max-width: 1000px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: grid;
+    grid-template-columns: repeat(12, 8%);
+    grid-template-rows: repeat(4, 100px);
+}
+
+
+.rectangle {
+    position: relative;
+    z-index: -9;
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 100%;
+}
+
+.rect {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    position: relative;
+    z-index: 1;
+    top: -10px;
+    left: -10px;
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rect2 {
+    padding-top: 50px;
+}
+
+.rectWrapper1 {
+    grid-area: 2 / 3 / 3 / 8;
+}
+
+.rectWrapper2 {
+    width: 90%;
+    height: 90%;
+    margin-top: 10%;
+    grid-area: 1 / 8 / 3 /12;
+}
+
+.rectWrapper3 {
+    grid-area: 3 / 6 / 4 / 12;
+}
+
+.rectWrapper4 {
+    grid-area: 4 / 4 / 5 / 9;
+}
+
+.ctaButton1 {
+    background-color: var(--secondary-color);
+    color: #000;
+    font-family: "crimson text";
+    font-size: 36px;
+    font-weight: 600;
+    width: 380px;
+    height: 60px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-190px, 70%);
+    z-index: 1;
+}
+
+@media screen and (max-width:1020px) {
+    #hero {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto 200px auto;
+    }
+
+    .heading {
+        width: 90%;
+    }
+
+    .rect {
+        font-size: 32px;
+    }
+
+
+    .rect2 {
+        padding-top: 30px;
+    }
+
+    .rectWrapper2 {
+        width: 90%;
+        height: 80%;
+        margin-top: 20%;
+        grid-area: 1 / 8 / 3 /13;
+    }
+
+    .ctaButton1 {
+        font-size: 30px;
+        width: 330px;
+        height: 50px;
+        transform: translate(-155px, 70%);
+    }
+}
+
+@media screen and (max-width:700px) {
+    .heading {
+        padding: 2%;
+        width: 80%;
+        max-width: 1000px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -130%);
+        display: grid;
+        grid-template-columns: repeat(6, 16%);
+        grid-template-rows: repeat(4, 70px);
+    }
+
+
+    .rect {
+        font-size: 24px;
+    }
+
+    .rectWrapper1 {
+        grid-area: 2 / 1 / 3 / 5;
+    }
+
+    .rectWrapper2 {
+        width: 110%;
+        height: 90%;
+        margin-top: 15%;
+        grid-area: 1 / 5 / 3 /7;
+    }
+
+    .rectWrapper3 {
+        width: 110%;
+        grid-area: 3 / 3 / 4 / 7;
+    }
+
+    .rectWrapper4 {
+        grid-area: 4 / 2 / 5 / 6;
+    }
+
+    .ctaButton1 {
+        font-size: 24px;
+        width: 280px;
+        height: 50px;
+        transform: translate(-140px, 10%);
+    }
+}
+
+#page1,
+#page2,
+#page3,
+#page4 {
+    width: 80%;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+#page1 h1,
+#page2 h1,
+#page3 h1,
+#page4 h1 {
+    text-align: center;
+    font-family: "crimson text";
+    color: transparent;
+    background: var(--text--gradient);
+    -webkit-background-clip: text;
+    font-size: 48px;
+}
+
+#page3 h1 {
+    font-size: 64px;
+}
+
+#page2 h4 {
+    text-align: right;
+    font-family: "crimson text";
+    color: #a9aaab;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+#page2 h4:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+#page1 h3,
+#page2 h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#page1 h2,
+#page2 h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.productContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(310px, 450px));
+    grid-template-rows: 370px;
+    gap: 100px;
+    margin-top: 50px;
+}
+
+.productWrapper {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.product {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary-color);
+    background-color: var(--background-color);
+    transform: translate(-10px, -10px);
+    position: relative;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 97%;
+    height: 20%;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    padding: 0px 20px;
+}
+
+.ctaButton2,
+.ctaButton3 {
+    background-color: var(--secondary-color);
+    color: #000;
+    font-family: "crimson text";
+    font-size: 36px;
+    font-weight: 600;
+    width: 380px;
+    height: 60px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.aboutContainer {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.about {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about h2,
+p {
+    color: transparent;
+    background: var(--text--gradient);
+    -webkit-background-clip: text;
+}
+
+.about h2 {
+    font-size: 32px;
+    font-weight: 700;
+    width: 500px;
+}
+
+.about p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 950px) {
+    .productContainer {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 450px);
+        gap: 50px;
+    }
+
+    #page1 h1,
+    #page2 h1,
+    #page3 h1,
+    #page4 h1 {
+        font-size: 40px;
+        text-align: left;
+    }
+
+    #page3 h1 {
+        font-size: 48px;
+    }
+
+    #page1 h3,
+    #page2 h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    #page1 h2,
+    #page2 h2 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+
+    .ctaButton2,
+    .ctaButton3 {
+        font-size: 30px;
+        width: 330px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .productContainer {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 320px);
+        gap: 50px;
+    }
+
+    #page1 h1,
+    #page2 h1,
+    #page3 h1,
+    #page4 h1 {
+        font-size: 32px;
+        text-align: left;
+    }
+
+    #page3 h1 {
+        font-size: 36px;
+    }
+
+    #page1 h3,
+    #page2 h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    #page1 h2,
+    #page2 h2 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+
+    .ctaButton2,
+    .ctaButton3 {
+        font-size: 24px;
+        width: 280px;
+        height: 50px;
+    }
+
+    .about h2 {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+        width: auto;
+    }
+
+    .about p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+footer {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+footer h1{
+    font-size: 64px;
+    font-weight: 900;
+    text-align: center;
+    color: #003141;}
+
+@media screen and (max-width: 768px) {
+    footer h1 {
+        font-size: 48px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    footer h1 {
+        font-size: 28px;
+    }
+    
+}
+
+.cta{
+    overflow: hidden;
+}
+
+.cta::before{
+    background-color:var(--primary-color);
+    height: 100%;
+    width: 0;
+    content: "" ;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s ease;
+    border-radius: 5px;
+}
+
+.cta:hover::before{
+    width: 100%;
+}
+
+.cta:hover {
+    color: var(--text-color);
+}

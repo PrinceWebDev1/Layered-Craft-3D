@@ -67,19 +67,19 @@ header {
     z-index: 1;
 }
 
-.letsTalk::before{
-    background-color:var(--primary-color);
+.letsTalk::before {
+    background-color: var(--primary-color);
     height: 100%;
     width: 0;
-    content: "" ;
+    content: "";
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     z-index: -1;
     transition: width 0.3s ease;
 }
 
-.letsTalk:hover::before{
+.letsTalk:hover::before {
     width: 100%;
 }
 
@@ -90,6 +90,7 @@ header {
 .menu img {
     margin-top: 4px;
     width: 22px;
+    cursor: pointer;
 }
 
 .wrapper {
@@ -126,7 +127,7 @@ header {
 #hero {
     width: 80%;
     max-width: 1000px;
-    margin: 0 auto 200px auto;
+    margin: 0 auto 300px auto;
 }
 
 .heroImage img {
@@ -146,6 +147,7 @@ header {
     display: grid;
     grid-template-columns: repeat(12, 8%);
     grid-template-rows: repeat(4, 100px);
+    overflow: hidden;
 }
 
 
@@ -164,8 +166,8 @@ header {
     border: 2px solid var(--primary-color);
     position: relative;
     z-index: 1;
-    top: -10px;
-    left: -10px;
+    /* top: -10px;
+    left: -10px; */
     text-align: center;
     font-family: 'Crimson Text', serif;
     font-size: 40px;
@@ -219,11 +221,11 @@ header {
     #hero {
         width: 90%;
         max-width: 1000px;
-        margin: 0 auto 200px auto;
+        margin: 0 auto 300px auto;
     }
 
     .heading {
-        width: 90%;
+        width: 100%;
     }
 
     .rect {
@@ -302,7 +304,7 @@ header {
 #page4 {
     width: 80%;
     max-width: 1000px;
-    margin: 100px auto;
+    margin: 200px auto;
 }
 
 #page1 h1,
@@ -358,6 +360,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: var(--primary-color);
+    position: relative;
 }
 
 .product {
@@ -365,8 +368,10 @@ header {
     height: 100%;
     border: 2px solid var(--primary-color);
     background-color: var(--background-color);
-    transform: translate(-10px, -10px);
+    bottom: 10px;
+right: 10px;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .productInfo {
@@ -382,6 +387,10 @@ header {
     border-radius: 5px;
     transform: translateX(-50%);
     padding: 0px 20px;
+}
+
+.product:hover {
+    transform: translate(0, 0);
 }
 
 .ctaButton2,
@@ -404,7 +413,7 @@ header {
 
 .aboutContainer {
     width: 100%;
-    margin: 50px auto;
+    margin: 100px auto;
 }
 
 .about {
@@ -529,14 +538,15 @@ footer {
     width: 90%;
     max-width: 1000px;
     margin: 50px auto 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
-footer h1{
+footer h1 {
     font-size: 64px;
     font-weight: 900;
-    text-align: center;
-    color: #003141;}
+    text-align: left;
+    color: #003141;
+}
 
 @media screen and (max-width: 768px) {
     footer h1 {
@@ -546,36 +556,154 @@ footer h1{
     footer p {
         font-size: 16px;
     }
-    
+
 }
+
 @media screen and (max-width: 600px) {
     footer h1 {
         font-size: 28px;
     }
-    
+
 }
 
-.cta{
+.cta {
     overflow: hidden;
 }
 
-.cta::before{
-    background-color:var(--primary-color);
+.cta::before {
+    background-color: var(--primary-color);
     height: 100%;
     width: 0;
-    content: "" ;
+    content: "";
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     z-index: -1;
     transition: width 0.3s ease;
     border-radius: 5px;
 }
 
-.cta:hover::before{
+.cta:hover::before {
     width: 100%;
 }
 
 .cta:hover {
     color: var(--text-color);
+}
+
+#menuDiv {
+    height: 100%;
+    width: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    z-index: 9999;
+    padding-left: 0;
+}
+
+.closeButton {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+    height: 32px;
+    opacity: 0;
+}
+
+#menuDiv h1 {
+    margin: 0 0 50px 0;
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: "crimson text";
+    text-align: left;
+}
+
+.menuItem {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 600;
+    color: #398ca7;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.menuItem:hover {
+    color: var(--secondary-color);
+}
+
+@media screen and (max-width: 750px) {
+    #menuDiv h1 {
+        font-size: 36px;
+    }
+
+    .menuItem {
+        font-size: 24px;
+    }
+
+}
+
+.startupPage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    background-color: transparent;
+    top: 0;
+    display: flex;
+}
+
+.startupPage div {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+    position: relative;
+}
+
+.startupPage svg{
+    position: absolute;
+}
+
+
+svg path {
+    stroke: #fff;
+    stroke-width: 0.1;
+    fill: transparent;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: TextAnimation 3s ease-in-out forwards;
+}
+
+@keyframes TextAnimation {
+    0% {
+        stroke-dashoffset: 500;
+    }
+
+    70% {
+        stroke-dashoffset: 250;
+        fill: transparent;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: #fff;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .startupPage svg{
+        width: 350px ;
+    }
 }

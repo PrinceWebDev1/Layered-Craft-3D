@@ -40,7 +40,7 @@ let svg = document.querySelector('.startupPage svg');
 startupDiv.forEach(element => {
     gsap.to(element, {
         duration: 0.5,
-        top: "-100%",
+        top: "-200%",
         delay: 3 + delayTimer,
     });
     delayTimer += 0.1;

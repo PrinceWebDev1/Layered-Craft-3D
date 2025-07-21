@@ -114,7 +114,7 @@ function animateRestHero() {
     gsap.from(".ctaButton1", {
         duration: 0.5,
         ease: "power2.inOut",
-        y: "200",
+        y: "300",
         delay: 6
     });
 }

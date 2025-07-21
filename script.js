@@ -131,7 +131,6 @@ function productAnimation() {
                 trigger: element,
                 start: "-300% top",
                 end: "bottom bottom",
-                markers: true,
             }
             });
     });

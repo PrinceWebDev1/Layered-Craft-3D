@@ -5,326 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Catalog</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@100..900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-        }
-
-        :root {
-            --primary-color: #0E4152;
-            --secondary-color: #ffffff;
-            --background-color: #050E15;
-            --text--gradient: linear-gradient(to right, #ffffff, #041e33);
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--secondary-color);
-            font-family: 'Outfit', sans-serif;
-            font-size: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-size: 20px;
-        }
-
-        header {
-            width: 80%;
-            height: 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px auto;
-            max-width: 1000px;
-        }
-
-        .title {
-            font-family: 'Crimson Text', serif;
-            font-size: 24px;
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-
-        .letsTalk {
-            font-size: 20px;
-            display: inline-block;
-            width: 100px;
-            height: 30px;
-            padding-top: 2px;
-            text-align: center;
-            border-radius: 5px;
-            font-family: 'Crimson Text', serif;
-            background-color: var(--secondary-color);
-            color: #000;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-            transition: color 0.3s ease;
-        }
-
-        .menu img {
-            margin-top: 4px;
-            width: 22px;
-        }
-
-        .wrapper {
-            display: flex;
-            gap: 30px;
-        }
-
-        #menuDiv {
-            display: none;
-        }
-
-        @media screen and (max-width: 768px) {
-            header {
-                width: 90%;
-            }
-
-            .title {
-                font-size: 18px;
-            }
-
-            .letsTalk {
-                width: 80px;
-                height: 25px;
-                font-size: 16px;
-                margin-bottom: 5px;
-            }
-
-            .menu img {
-                width: 18px;
-                margin-top: 6px;
-            }
-        }
-
-        main {
-            width: 80%;
-            margin: 0 auto;
-            max-width: 1000px;
-        }
-
-        main h1 {
-            text-align: center;
-            font-family: "crimson text";
-            color: transparent;
-            background: var(--text--gradient);
-            -webkit-background-clip: text;
-            font-size: 48px;
-            margin-top: 50px;
-        }
-
-        .productContainer {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(270px, 450px));
-            gap: 100px;
-            margin-top: 50px;
-        }
-
-        .productWrapper {
-            width: 100%;
-            height: 300px;
-            background-color: var(--primary-color);
-        }
-
-        .productsmall {
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--primary-color);
-            background-color: var(--background-color);
-            position: relative;
-            transform: translate(-10px, -10px);
-            transition: 0.3s ease-in-out;
-        }
-
-        .productsmall:hover {
-            transform: translate(0px, 0px);
-        }
-
-        .productInfo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 97%;
-            height: 20%;
-            background-color: var(--primary-color);
-            position: absolute;
-            bottom: 2%;
-            left: 50%;
-            border-radius: 5px;
-            transform: translateX(-50%);
-            padding: 0px 20px;
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 400;
-        }
-
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        @media screen and (max-width: 1200px) {
-            .productContainer {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(270px, 450px));
-                gap: 50px;
-            }
-
-            .productWrapper {
-                width: 100%;
-                height: 350px;
-                background-color: var(--primary-color);
-            }
-
-            main h1 {
-                font-size: 40px;
-                text-align: left;
-            }
-
-            h3 {
-                font-size: 18px;
-                font-weight: 400;
-            }
-
-            h2 {
-                font-size: 24px;
-                font-weight: 700;
-            }
-
-        }
-
-        @media screen and (max-width: 700px) {
-            .productContainer {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(120px, 450px));
-                gap: 20px;
-            }
-
-            .productWrapper {
-                width: 100%;
-                height: 180px;
-                background-color: var(--primary-color);
-            }
-
-
-            .productsmall {
-                transform: translate(-4px, -4px);
-            }
-
-            main h1 {
-                font-size: 32px;
-                text-align: left;
-            }
-
-            h3 {
-                font-size: 12px;
-                font-weight: 400;
-            }
-
-            h2 {
-                font-size: 16px;
-                font-weight: 500;
-            }
-
-            .productInfo {
-                height: 25%;
-                padding: 0px 10px;
-            }
-
-        }
-
-        footer {
-            position: relative;
-            width: 90%;
-            max-width: 1000px;
-            margin: 100px auto 0 auto;
-            text-align: left;
-            color: #568c9e;
-        }
-
-        footer h1 {
-            font-size: 64px;
-            font-weight: 900;
-            text-align: center;
-            color: #003141;
-            margin-top: 50px;
-        }
-
-        @media screen and (max-width: 768px) {
-            footer h1 {
-                font-size: 48px;
-            }
-
-            footer p {
-                font-size: 16px;
-            }
-
-        }
-
-        @media screen and (max-width: 600px) {
-            footer h1 {
-                font-size: 28px;
-            }
-
-        }
-
-
-        .letsTalk::before {
-            background-color: var(--primary-color);
-            height: 100%;
-            width: 0;
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transition: width 0.3s ease;
-        }
-
-        .letsTalk:hover::before {
-            width: 100%;
-        }
-
-        .letsTalk:hover {
-            color: var(--text-color);
-        }
-    </style>
+    <link rel="stylesheet" href="products.css">
 </head>
 
 <body>
     <header>
         <span class="title">Layered Craft 3D</span>
         <div class="wrapper"><a href="customPrints.html"><span class="letsTalk">Let's Talk</span></a>
-            <span class="menu"><img src="assets/Vector.svg" alt="">
-                <div id="menuDiv">
-                    <a href="Index.html"><span class="menuItem">Home</span></a>
-                    <a href="products.html"><span class="menuItem">Products</span></a>
-                    <a href="customPrints.html"><span class="menuItem">Contact</span></a>
-                    <a href="Index.html/#page4"><span class="menuItem">About</span></a>
-                </div>
+            <span class="menu"><img src="assets/Vector.svg" class="menuButton" alt="">
             </span>
         </div>
 
     </header>
 
     <main>
+        <div id="menuDiv">
+            <img src="assets/maki--cross.svg" class="closeButton" alt="">
+            <a href="Index.html"><span class="menuItem">Home</span></a>
+            <a href="products.html"><span class="menuItem">Products</span></a>
+            <a href="customPrints.html"><span class="menuItem">Contact</span></a>
+            <a href="Index.html#page4"><span class="menuItem">About</span></a>
+        </div>
         <h1>Crafted with Elegance and Care</h1>
         <div class="productContainer">
             <a href="">
@@ -424,5 +125,46 @@
         <h1>LAYERED CRAFT 3D</h1>
     </footer>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    let menuButton = document.querySelector('.menuButton');
+    let closeButton = document.querySelector('.closeButton');
+    let menuDiv = document.querySelector('#menuDiv');
+
+    menuButton.addEventListener('click', () => {
+        gsap.to(menuDiv, {
+            duration: 0.5,
+            width: "80%",
+            ease: "power2.inOut",
+            paddingLeft: "10%"
+        });
+        gsap.to(closeButton, {
+            display: "block",
+            duration: 0.5,
+            opacity: 1,
+        })
+    });
+
+    closeButton.addEventListener('click', () => {
+        gsap.to(menuDiv, {
+            duration: 0.5,
+            width: "0",
+            ease: "power2.inOut",
+            paddingLeft: "0"
+        });
+        gsap.to(closeButton, {
+            display: "none",
+            duration: 0.5,
+            opacity: 0
+        })
+    });
+
+</script>
 
 </html>
